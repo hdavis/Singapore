@@ -7,7 +7,6 @@
 
   <link rel="stylesheet" href="https://js.arcgis.com/4.3/esri/css/main.css">
   <script src="https://js.arcgis.com/4.3/"></script>
-  <link rel="stylesheet" href="singapore_style.css">
 
   <style>
     html,
@@ -15,7 +14,7 @@
     #viewDiv {
       padding: 0;
       margin: 0;
-      height: 500px;
+      height: 100%;
       width: 100%;
     }
 
@@ -126,24 +125,6 @@
   <span id="layerToggle">
     <input type="checkbox" id="OpenSpaceLyr"> Open Space
   </span>
-  <div>
-    <h1>Singapore's Population Density and Open Space</h1>
-    <h3>An ArcGIS JavaScript API Example</h3>
-  </div>
-  <div>
-      <h2>Project Goal</h2>
-      <p>Experiment with the ArcGIS JavaScript API.</p>
-  </div>
-  <div>
-    <hr>
-    <h2>Future Improvements</h2>
-      <ul>
-          <li>Add a legend.</li>
-          <li>Provide a way to view the underlying data, perhaps as a popup or via a side panel.</li>
-          <li>Investigate why data is not centered on page.  Is it due to using 2D data on a 3D map or is the layer's full extent not provided accurately from the TileLayer's MapServer? (This map currently automatically zooms to the population density layer's full extent, rather than to a hard-coded centerpoint.)</li>
-
-      </ul>
-  </div>
 </body>
 
 </html>
