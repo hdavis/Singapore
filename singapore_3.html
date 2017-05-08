@@ -48,10 +48,10 @@
          * cached map service depicting U.S. male population and the other
          * pointing to a layer of roads and highways.
          *****************************************************************/
-        var transportationLyr = new TileLayer({
+        var natureLyr = new TileLayer({
           url: "https://tiles.arcgis.com/tiles/nGt4QxSblgDfeJn9/arcgis/rest/services/Singapore_Open_Space/MapServer",
           // This property can be used to uniquely identify the layer
-          id: "streets",
+          id: "open_space",
           visible: false
         });
 
@@ -73,7 +73,7 @@
         /*****************************************************************
          * Or they may be added to the map using map.add()
          *****************************************************************/
-        map.add(transportationLyr);
+        map.add(natureLyr);
 
         var view = new SceneView({
           container: "viewDiv",
@@ -89,10 +89,9 @@
             // Explore the properties of the population layer's layer view here
             console.log("LayerView for male population created!", event.layerView);
           }
-          if (event.layer.id === "streets") {
-            // Explore the properties of the transportation layer's layer view here
-            // Explore the properties of the transportation layer's layer view here
-            console.log("LayerView for streets created!", event.layerView);
+          if (event.layer.id === "open_space") {
+            // Explore the properties of the open space layer's layer view here
+            console.log("LayerView for open space created!", event.layerView);
           }
         });
 
@@ -107,7 +106,7 @@
           });
         });
 
-        var streetsLyrToggle = dom.byId("streetsLyr");
+        var OpenSpaceLyrToggle = dom.byId("OpenSpaceLyr");
 
         /*****************************************************************
          * The visible property on the layer can be used to toggle the
@@ -115,8 +114,8 @@
          * the layer is still part of the map, which means you can access
          * its properties and perform analysis even though it isn't visible.
          *******************************************************************/
-        on(streetsLyrToggle, "change", function() {
-          transportationLyr.visible = streetsLyrToggle.checked;
+        on(OpenSpaceLyrToggle, "change", function() {
+          natureLyr.visible = OpenSpaceLyrToggle.checked;
         });
       });
   </script>
@@ -125,7 +124,7 @@
 <body>
   <div id="viewDiv"></div>
   <span id="layerToggle">
-    <input type="checkbox" id="streetsLyr"> Open Space
+    <input type="checkbox" id="OpenSpaceLyr"> Open Space
   </span>
 </body>
 
